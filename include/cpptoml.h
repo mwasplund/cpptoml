@@ -7,6 +7,10 @@
 #ifndef CPPTOML_H
 #define CPPTOML_H
 
+#ifdef SOUP_BUILD
+module;
+#endif
+
 #include <algorithm>
 #include <cassert>
 #include <clocale>
@@ -21,6 +25,10 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+
+#ifdef SOUP_BUILD
+export module CPPToml;
+#endif
 
 #if __cplusplus > 201103L
 #define CPPTOML_DEPRECATED(reason) [[deprecated(reason)]]
