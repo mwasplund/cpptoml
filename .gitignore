@@ -4,3 +4,5 @@
 build/
 bii/
 bin/
+obj/
+.soup/

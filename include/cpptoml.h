@@ -8,9 +8,9 @@
 #define CPPTOML_H
 
 #ifdef SOUP_BUILD
-module;
-#endif
-
+#define SOUP_EXPORT export
+#else
+#define SOUP_EXPORT
 #include <algorithm>
 #include <cassert>
 #include <clocale>
@@ -25,9 +25,6 @@ module;
 #include <string>
 #include <unordered_map>
 #include <vector>
-
-#ifdef SOUP_BUILD
-export module CPPToml;
 #endif
 
 #if __cplusplus > 201103L
@@ -44,7 +41,7 @@ export module CPPToml;
 #endif
 #endif
 
-namespace cpptoml
+SOUP_EXPORT namespace cpptoml
 {
 class writer; // forward declaration
 class base;   // forward declaration
